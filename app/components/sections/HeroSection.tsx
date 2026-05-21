@@ -31,7 +31,7 @@ function HeroNav() {
   };
 
   return (
-    <div className="absolute z-20 flex flex-col gap-[8px] left-[16px] right-[16px] top-[16px] md:left-1/2 md:right-auto md:-translate-x-1/2 md:top-[40px] md:w-[420px]">
+    <div className="fixed z-20 flex flex-col gap-[8px] left-[16px] right-[16px] top-[16px] md:left-1/2 md:right-auto md:-translate-x-1/2 md:top-[40px] md:w-[420px]">
 
       {/* Btn Nav */}
       <div className="flex items-center justify-between h-[48px] px-[14px] rounded-[12px] relative overflow-hidden">
