@@ -41,7 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 # videos (large files)
-/public/videos/kori-demo.mp4
 
 # claude code
 .claude/
