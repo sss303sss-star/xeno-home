@@ -41,3 +41,16 @@
   font-family: var(--font-monda);
   font-weight: 500;
 }
+
+@keyframes featuresScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.featuresTrack {
+  animation: featuresScroll 30s linear infinite;
+}
+
+.featuresWrapper:hover .featuresTrack {
+  animation-play-state: paused;
+}

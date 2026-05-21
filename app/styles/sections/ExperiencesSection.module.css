@@ -24,6 +24,19 @@
   transition: font-size 0.3s, color 0.3s;
 }
 
+@keyframes awardsScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.awardsTrack {
+  animation: awardsScroll 30s linear infinite;
+}
+
+.awardsWrapper:hover .awardsTrack {
+  animation-play-state: paused;
+}
+
 .experienceTitle {
   font-family: var(--font-monda);
   font-weight: 500;

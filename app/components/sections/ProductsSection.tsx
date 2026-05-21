@@ -244,12 +244,12 @@ function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
       2xl:w-[500px]"
     >
       <div
-        className={`${styles.featureTitle} text-black text-[16px] md:text-[26px] font-medium leading-none`}
+        className={`${styles.featureTitle} text-black text-[16px] md:text-[26px] font-medium leading-[1.2]`}
       >
         {feature.title}
       </div>
       <div
-        className={`${styles.featureDescription} text-black text-[14px] 2xl:text-[18px] font-normal leading-normal`}
+        className={`${styles.featureDescription} text-black text-[14px] md:text-[18px] font-normal leading-[1.6]`}
       >
         {feature.description}
       </div>
@@ -347,12 +347,9 @@ export default function ProductsSection() {
 
       {/* Horizontal feature list
           px-16 / pt-40 mobile, pt-80 md+ / gap-32 / overflow-x-scroll snap */}
-      <div
-        className="w-full overflow-x-scroll scroll-smooth snap-x snap-mandatory
-        pt-[40px] md:pt-[80px]"
-      >
-        <div className="flex gap-[32px] px-[16px]">
-          {features.map((feature, i) => (
+      <div className={`${styles.featuresWrapper} w-full overflow-hidden pt-[40px] md:pt-[80px]`}>
+        <div className={`${styles.featuresTrack} flex gap-[32px]`}>
+          {[...features, ...features].map((feature, i) => (
             <FeatureCard key={i} feature={feature} />
           ))}
         </div>

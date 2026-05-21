@@ -12,9 +12,9 @@ const awards = [
 
 export default function ExperiencesAwardsSection() {
   return (
-    <div className="w-full overflow-x-scroll scroll-smooth snap-x snap-mandatory pt-[40px] md:pt-[64px] xl:pt-[80px]">
-      <div className="flex gap-[32px] px-[16px]">
-        {awards.map((award, i) => (
+    <div className={`${styles.awardsWrapper} w-full overflow-hidden pt-[40px] md:pt-[64px] xl:pt-[80px]`}>
+      <div className={`${styles.awardsTrack} flex gap-[32px]`}>
+        {[...awards, ...awards].map((award, i) => (
           <div
             key={i}
             className="relative shrink-0 snap-start overflow-hidden rounded-[24px]
