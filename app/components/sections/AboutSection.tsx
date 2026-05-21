@@ -1,6 +1,7 @@
 import styles from "../../styles/sections/AboutSection.module.css";
+import { BASE_PATH } from "../../lib/asset";
 
-const imgAI = "/images/about-ai.png";
+const imgAI = `${BASE_PATH}/images/about-ai.png`;
 
 const tagWords = [
   { text: "Xenoimpact delivers  ", boxed: false },

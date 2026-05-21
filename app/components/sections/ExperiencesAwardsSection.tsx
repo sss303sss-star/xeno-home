@@ -1,12 +1,13 @@
 import styles from "../../styles/sections/ExperiencesSection.module.css";
+import { BASE_PATH } from "../../lib/asset";
 
 const awards = [
-  { year: "2018", brand: "SAMSUNG", title: "SAMSUNG 2Q BEST INNOVATION ACHIEVEMENT", image: "/awards/award-1.jpg" },
-  { year: "2017", brand: "SAMSUNG", title: "SAMSUNG 2Q BEST INNOVATION ACHIEVEMENT", image: "/awards/award-2.jpg" },
-  { year: "2013", brand: "SAMSUNG", title: "SAMSUNG 3Q WORK SMART AWARD", image: "/awards/award-3.jpg" },
-  { year: "2010", brand: "SAMSUNG", title: "SAMSUNG MANAGEMENT INNOVATION AWARD", image: "/awards/award-4.jpg" },
-  { year: "2010", brand: "SAMSUNG", title: "SAMSUNG MEMORY BUSINESS SUPPORT AWARD", image: "/awards/award-5.jpg" },
-  { year: "2009", brand: "SAMSUNG", title: "SAMSUNG MEMORY MANAGEMENT INNOVATION AWARD", image: "/awards/award-6.jpg" },
+  { year: "2018", brand: "SAMSUNG", title: "SAMSUNG 2Q BEST INNOVATION ACHIEVEMENT", image: `${BASE_PATH}/awards/award-1.jpg` },
+  { year: "2017", brand: "SAMSUNG", title: "SAMSUNG 2Q BEST INNOVATION ACHIEVEMENT", image: `${BASE_PATH}/awards/award-2.jpg` },
+  { year: "2013", brand: "SAMSUNG", title: "SAMSUNG 3Q WORK SMART AWARD", image: `${BASE_PATH}/awards/award-3.jpg` },
+  { year: "2010", brand: "SAMSUNG", title: "SAMSUNG MANAGEMENT INNOVATION AWARD", image: `${BASE_PATH}/awards/award-4.jpg` },
+  { year: "2010", brand: "SAMSUNG", title: "SAMSUNG MEMORY BUSINESS SUPPORT AWARD", image: `${BASE_PATH}/awards/award-5.jpg` },
+  { year: "2009", brand: "SAMSUNG", title: "SAMSUNG MEMORY MANAGEMENT INNOVATION AWARD", image: `${BASE_PATH}/awards/award-6.jpg` },
 ];
 
 export default function ExperiencesAwardsSection() {
@@ -34,10 +35,10 @@ export default function ExperiencesAwardsSection() {
               {/* Badge — 96×56px */}
               <div className="relative self-start w-[96px] h-[56px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/awards/laurel-left.png" alt="" aria-hidden="true"
+                <img src={`${BASE_PATH}/awards/laurel-left.png`} alt="" aria-hidden="true"
                   className="absolute left-0 top-0 h-full w-auto object-contain pointer-events-none" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/awards/laurel-right.png" alt="" aria-hidden="true"
+                <img src={`${BASE_PATH}/awards/laurel-right.png`} alt="" aria-hidden="true"
                   className="absolute right-0 top-0 h-full w-auto object-contain pointer-events-none" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-[2px]">
                   <span className={`${styles.monda} text-[#D9D9D9] text-[5px] font-medium uppercase tracking-[0.2em]`}>
@@ -68,10 +69,10 @@ export default function ExperiencesAwardsSection() {
                 w-[167px] h-[97px]
                 xl:w-[219px] xl:h-[127px]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/awards/laurel-left.png" alt="" aria-hidden="true"
+                <img src={`${BASE_PATH}/awards/laurel-left.png`} alt="" aria-hidden="true"
                   className="absolute left-0 top-0 h-full w-auto object-contain pointer-events-none" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/awards/laurel-right.png" alt="" aria-hidden="true"
+                <img src={`${BASE_PATH}/awards/laurel-right.png`} alt="" aria-hidden="true"
                   className="absolute right-0 top-0 h-full w-auto object-contain pointer-events-none" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-[3px] xl:gap-[4px]">
                   <span className={`${styles.monda} text-[#D9D9D9] text-[8px] xl:text-[10px] font-medium uppercase tracking-[0.2em]`}>

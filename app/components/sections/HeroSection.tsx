@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import styles from "../../styles/sections/HeroSection.module.css";
+import { BASE_PATH } from "../../lib/asset";
 
-const imgAlienIcon = "/icons/alien.png";
-const imgCloseIcon = "/icons/close.png";
+const imgAlienIcon = `${BASE_PATH}/icons/alien.png`;
+const imgCloseIcon = `${BASE_PATH}/icons/close.png`;
 
 const navLinks = ["Home", "About", "Experiences", "Products", "Customers"];
 
@@ -93,7 +94,7 @@ export default function HeroSection() {
         loop
         playsInline
       >
-        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        <source src={`${BASE_PATH}/videos/hero-bg.mp4`} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-black/40" />
 

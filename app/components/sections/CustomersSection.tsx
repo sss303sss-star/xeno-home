@@ -1,9 +1,10 @@
 import styles from "../../styles/sections/CustomersSection.module.css";
 import CustomerLogosSection from "./CustomerLogosSection";
+import { BASE_PATH } from "../../lib/asset";
 
 const testimonials = [
   {
-    logo: { src: "/logos/customers/samsung.svg", alt: "Samsung", className: "w-[101px] h-[16px] md:w-[151px] md:h-[24px]" },
+    logo: { src: `${BASE_PATH}/logos/customers/samsung.svg`, alt: "Samsung", className: "w-[101px] h-[16px] md:w-[151px] md:h-[24px]" },
     quote: "MARU Platform is not just about collecting data; it has established itself as a knowledge-driven decision-making platform that can be used directly in the field.",
     extendedQuote: [
       "MARU Platform is not just about collecting data; it has established itself as a knowledge-driven decision-making platform that can be used directly in the field. It is particularly impressive that it is designed to go beyond reporting screens and enable actual execution.",
@@ -14,7 +15,7 @@ const testimonials = [
     company: "SAMSUNG ELECTRONICS, Memory, Strategy Marketing",
   },
   {
-    logo: { src: "/logos/customers/hyundai-motor.svg", alt: "Hyundai Motor Group", className: "w-[81px] h-[26px] md:w-[125px] md:h-[40px]" },
+    logo: { src: `${BASE_PATH}/logos/customers/hyundai-motor.svg`, alt: "Hyundai Motor Group", className: "w-[81px] h-[26px] md:w-[125px] md:h-[40px]" },
     quote: "We sincerely appreciate your bold initiative in exploring the new domain of improving SI design and development methodologies using generative AI.",
     extendedQuote: [
       "We sincerely appreciate your bold initiative in exploring the new domain of improving SI design and development methodologies using generative AI.",
@@ -25,7 +26,7 @@ const testimonials = [
     company: "HYUNDAI Motor Group",
   },
   {
-    logo: { src: "/logos/customers/sk-ax.svg", alt: "SK AX", className: "w-[72px] h-[38px] md:w-[91px] md:h-[48px]" },
+    logo: { src: `${BASE_PATH}/logos/customers/sk-ax.svg`, alt: "SK AX", className: "w-[72px] h-[38px] md:w-[91px] md:h-[48px]" },
     quote: "In this large-scale national infrastructure project worth ₩30 billion, they earned our deep trust and enabled the successful completion of a mission-critical security system.",
     extendedQuote: [
       "Our experience working together on the Incheon International Airport Phase 2 Security System Integration Project (2005–2008) was truly impressive.",

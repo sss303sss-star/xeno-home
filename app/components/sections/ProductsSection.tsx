@@ -1,11 +1,12 @@
 import styles from "../../styles/sections/ProductsSection.module.css";
+import { BASE_PATH } from "../../lib/asset";
 
-const logoKoriAnswers = "/logos/customers/products/kori-answers.png";
-const logoKoriCode = "/logos/customers/products/kori-code.png";
-const logoKoriCli = "/logos/customers/products/kori-cli.png";
-const logoKoriBlueprint = "/logos/customers/products/kori-blueprint.png";
-const logoKoriCrmUnion = "/logos/customers/products/kori-crm-union.png";
-const logoVrix = "/logos/customers/products/vrix.png";
+const logoKoriAnswers = `${BASE_PATH}/logos/customers/products/kori-answers.png`;
+const logoKoriCode = `${BASE_PATH}/logos/customers/products/kori-code.png`;
+const logoKoriCli = `${BASE_PATH}/logos/customers/products/kori-cli.png`;
+const logoKoriBlueprint = `${BASE_PATH}/logos/customers/products/kori-blueprint.png`;
+const logoKoriCrmUnion = `${BASE_PATH}/logos/customers/products/kori-crm-union.png`;
+const logoVrix = `${BASE_PATH}/logos/customers/products/vrix.png`;
 
 const products = [
   {
@@ -310,7 +311,7 @@ export default function ProductsSection() {
               loop
               playsInline
             >
-              <source src="/videos/kori-demo.mp4" type="video/mp4" />
+              <source src={`${BASE_PATH}/videos/kori-demo.mp4`} type="video/mp4" />
             </video>
           </div>
         </div>

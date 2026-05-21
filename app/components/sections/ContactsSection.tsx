@@ -1,9 +1,10 @@
 "use client";
 
 import styles from "../../styles/sections/ContactsSection.module.css";
+import { BASE_PATH } from "../../lib/asset";
 
-const imgAlienIcon = "/icons/alien.png";
-const imgLogoXenoimpact = "/logos/customers/xenoimpact.svg";
+const imgAlienIcon = `${BASE_PATH}/icons/alien.png`;
+const imgLogoXenoimpact = `${BASE_PATH}/logos/customers/xenoimpact.svg`;
 
 const navLinks = ["Home", "About", "Experiences", "Products", "Customers"];
 
@@ -27,7 +28,7 @@ export default function ContactsSection() {
         loop
         playsInline
       >
-        <source src="/videos/space-bg.mp4" type="video/mp4" />
+        <source src={`${BASE_PATH}/videos/space-bg.mp4`} type="video/mp4" />
       </video>
 
       {/* Content */}
