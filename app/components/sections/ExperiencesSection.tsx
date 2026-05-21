@@ -1,6 +1,7 @@
 import styles from "../../styles/sections/ExperiencesSection.module.css";
 import ExperiencesAwardsSection from "./ExperiencesAwardsSection";
 import ExperiencesYearSection from "./ExperiencesYearSection";
+import { BASE_PATH } from "../../lib/asset";
 
 const featuredProjects = [
   { shortName: "MARU", description: "Samsung Electronics Memory Strategy Marketing Unified Intelligence Platform", tags: ["ai", "CRM", "Sales", "2017-now"], image: "maru.jpg" },
@@ -58,7 +59,7 @@ export default function ExperiencesSection() {
             <div key={project.shortName} className="group relative flex gap-[32px] py-[8px] items-center border-b border-solid border-[#e0e0e0] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`/images/projects/${project.image}`}
+                src={`${BASE_PATH}/images/projects/${project.image}`}
                 alt=""
                 aria-hidden="true"
                 className="absolute left-0 top-1/2 -translate-y-1/2 w-[197px] h-[106px] object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out pointer-events-none z-10"
@@ -82,7 +83,7 @@ export default function ExperiencesSection() {
             <div key={project.shortName} className="group relative flex items-center justify-between py-[24px] border-b border-solid border-[#e0e0e0] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`/images/projects/${project.image}`}
+                src={`${BASE_PATH}/images/projects/${project.image}`}
                 alt=""
                 aria-hidden="true"
                 className="absolute top-0 h-full w-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out pointer-events-none z-10"
