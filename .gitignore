@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# videos (large files)
+/public/videos/
+
+# claude code
+.claude/
+
+# figma working files
+figma_*.png
+FIGMA_DIFF.md

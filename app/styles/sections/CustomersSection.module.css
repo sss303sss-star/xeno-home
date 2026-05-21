@@ -1,0 +1,32 @@
+.tomorrow { font-family: var(--font-tomorrow); }
+.monda { font-family: var(--font-monda); font-weight: 400; }
+.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+
+.heading {
+  font-family: var(--font-tomorrow);
+  line-height: normal;
+}
+
+.tagline {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.testimonialQuote {
+  font-family: var(--font-tomorrow);
+  line-height: 1.6;
+}
+
+.testimonialName {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.testimonialCompany {
+  font-family: var(--font-monda);
+  font-weight: 400;
+  line-height: normal;
+  color: #757575;
+}

@@ -1,0 +1,26 @@
+.tomorrow { font-family: var(--font-tomorrow); }
+.monda { font-family: var(--font-monda); font-weight: 400; }
+.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+.mondaBold { font-family: var(--font-monda); font-weight: 700; }
+
+.navBtn {
+  font-family: var(--font-tomorrow);
+  font-size: 24px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.heroWord {
+  font-family: var(--font-tomorrow);
+  line-height: normal;
+}
+
+.serviceList {
+  font-family: var(--font-monda);
+  font-weight: 700;
+  line-height: 32px;
+}
+
+@media (min-width: 700px) {
+  .serviceList { line-height: 44px; }
+}

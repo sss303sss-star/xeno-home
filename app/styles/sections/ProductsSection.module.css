@@ -1,0 +1,43 @@
+.tomorrow { font-family: var(--font-tomorrow); }
+.monda { font-family: var(--font-monda); font-weight: 400; }
+.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+
+.heading {
+  font-family: var(--font-tomorrow);
+  line-height: normal;
+}
+
+.subHeading {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.cardName {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.cardDescription {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.descriptionTagline {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.featureTitle {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.featureDescription {
+  font-family: var(--font-monda);
+  font-weight: 500;
+}

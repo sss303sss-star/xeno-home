@@ -1,0 +1,31 @@
+.tomorrow { font-family: var(--font-tomorrow); }
+.monda { font-family: var(--font-monda); font-weight: 400; }
+.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+
+.heading {
+  font-family: var(--font-tomorrow);
+  line-height: 0;
+}
+
+.tagline {
+  font-family: var(--font-monda);
+  font-weight: 500;
+}
+
+.tagWord {
+  font-family: var(--font-tomorrow);
+  line-height: 0;
+}
+
+.tagWordBoxed {
+  font-family: var(--font-tomorrow);
+  line-height: 0;
+}
+
+.bodyText {
+  font-family: var(--font-monda);
+  font-weight: 400;
+  line-height: 0;
+  color: #6d6d6d;
+  text-transform: uppercase;
+}

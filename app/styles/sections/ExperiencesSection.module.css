@@ -1,0 +1,32 @@
+.tomorrow { font-family: var(--font-tomorrow); }
+.monda { font-family: var(--font-monda); font-weight: 400; }
+.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+
+.tag {
+  font-family: var(--font-monda);
+  font-weight: 500;
+}
+
+.projectDescription {
+  font-family: var(--font-monda);
+}
+
+.projectShortName {
+  font-family: var(--font-tomorrow);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.yearBtn {
+  font-family: var(--font-tomorrow);
+  line-height: 1;
+  white-space: nowrap;
+  transition: font-size 0.2s, color 0.2s;
+}
+
+.experienceTitle {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: normal;
+}

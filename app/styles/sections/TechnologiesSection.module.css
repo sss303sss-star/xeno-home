@@ -1,0 +1,30 @@
+.tomorrow { font-family: var(--font-tomorrow); }
+.monda { font-family: var(--font-monda); font-weight: 400; }
+.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+
+.heading {
+  font-family: var(--font-tomorrow);
+  line-height: normal;
+}
+
+.categoryTitle {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.tagLabel {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  line-height: 12px;
+}
+
+@media (min-width: 700px) {
+  .tagLabel { line-height: 16px; }
+}
+
+.footerTagline {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  white-space: pre;
+}
