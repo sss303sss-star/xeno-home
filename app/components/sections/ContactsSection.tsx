@@ -102,14 +102,12 @@ export default function ContactsSection() {
 
           {/* XENOIMPACT logo: 156×18 mobile / 214×24 md+ */}
           <div className="flex flex-1 items-start pt-[32px] md:pt-[6px]">
-            <div className="relative w-[156px] h-[18px] md:w-[214px] md:h-[24px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={imgLogoXenoimpact}
-                alt="XENOIMPACT"
-                className="absolute block inset-0 max-w-none size-full"
-              />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={imgLogoXenoimpact}
+              alt="XENOIMPACT"
+              className="block h-[18px] md:h-[24px] w-auto"
+            />
           </div>
         </div>
       </div>

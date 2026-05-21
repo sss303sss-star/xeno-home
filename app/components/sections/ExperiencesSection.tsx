@@ -4,14 +4,14 @@ import ExperiencesYearSection from "./ExperiencesYearSection";
 import { BASE_PATH } from "../../lib/asset";
 
 const featuredProjects = [
-  { shortName: "MARU", description: "Samsung Electronics Memory Strategy Marketing Unified Intelligence Platform", tags: ["ai", "CRM", "Sales", "2017-now"], image: "maru.jpg" },
-  { shortName: "RMS", description: "Hyundai Mobis Purchase AI-powered Commodity Prediction System", tags: ["ai", "Purchase", "Prediction", "2024"], image: "rms.jpg" },
-  { shortName: "ISCS", description: "Incheon International Airport 2nd Phase Security and Surveillance System", tags: ["Security", "Surveillance", "2006"], image: "iscs.jpg" },
-  { shortName: "JFOS-K", description: "Republic of Korea Joint Chiefs of Staff JFOS-K (Joint Fire Operation System)", tags: ["Operation", "C2 System", "2011"], image: "jfos-k.jpg" },
-  { shortName: "ABR", description: "Agency for Defense Development Ballistic Measurement System", tags: ["Ballistic", "Measurement", "2014"], image: "abr.jpg" },
-  { shortName: "WAR ROOM", description: "Samsung Electronics SEA New Jersey Management War Room", tags: ["War Room", "2010"], image: "war-room.jpg" },
-  { shortName: "DS BI", description: "Samsung Electronics Device Solution Business Intelligence for Branches", tags: ["Business", "Intelligence", "2012"], image: "ds-bi.jpg" },
-  { shortName: "DP/PA", description: "Samsung Electronics Memory Demand Planning and Pre-allocation System", tags: ["Demand", "Planning", "2008"], image: "dp-pa.jpg" },
+  { shortName: "MARU", description: "Samsung Electronics Memory Strategy Marketing Unified Intelligence Platform", tags: ["ai", "CRM", "Sales", "2017-now"], image: "maru.png" },
+  { shortName: "RMS", description: "Hyundai Mobis Purchase AI-powered Commodity Prediction System", tags: ["ai", "Purchase", "Prediction", "2024"], image: "rms.png" },
+  { shortName: "ISCS", description: "Incheon International Airport 2nd Phase Security and Surveillance System", tags: ["Security", "Surveillance", "2006"], image: "iscs.png" },
+  { shortName: "JFOS-K", description: "Republic of Korea Joint Chiefs of Staff JFOS-K (Joint Fire Operation System)", tags: ["Operation", "C2 System", "2011"], image: "jfos-k.png" },
+  { shortName: "ABR", description: "Agency for Defense Development Ballistic Measurement System", tags: ["Ballistic", "Measurement", "2014"], image: "abr.png" },
+  { shortName: "WAR ROOM", description: "Samsung Electronics SEA New Jersey Management War Room", tags: ["War Room", "2010"], image: "war-room.png" },
+  { shortName: "DS BI", description: "Samsung Electronics Device Solution Business Intelligence for Branches", tags: ["Business", "Intelligence", "2012"], image: "ds-bi.png" },
+  { shortName: "DP/PA", description: "Samsung Electronics Memory Demand Planning and Pre-allocation System", tags: ["Demand", "Planning", "2008"], image: "dp-pa.png" },
 ];
 
 function TagLg({ label }: { label: string }) {

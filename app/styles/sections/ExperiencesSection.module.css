@@ -21,7 +21,7 @@
   font-family: var(--font-tomorrow);
   line-height: 1;
   white-space: nowrap;
-  transition: font-size 0.2s, color 0.2s;
+  transition: font-size 0.3s, color 0.3s;
 }
 
 .experienceTitle {
