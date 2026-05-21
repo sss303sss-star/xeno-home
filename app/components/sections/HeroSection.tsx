@@ -6,6 +6,7 @@ import { BASE_PATH } from "../../lib/asset";
 
 const imgAlienIcon = `${BASE_PATH}/icons/alien.png`;
 const imgCloseIcon = `${BASE_PATH}/icons/close.png`;
+const imgMenuIcon = `${BASE_PATH}/icons/menu.png`;
 
 const navLinks = ["Home", "About", "Experiences", "Products", "Customers"];
 
@@ -23,7 +24,7 @@ const heroWords = [
 //   Popup/Menu: p-[24px] rounded-[12px], font Tomorrow 24px, gap-[8px], leading-[1.6]
 //   Position: top-[40px] left-1/2 -translate-x-1/2 w-[420px]
 function HeroNav() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleNav = (id: string) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
@@ -54,7 +55,10 @@ function HeroNav() {
             onClick={() => setOpen(true)}
             className="relative size-[30px] cursor-pointer"
             aria-label="Open menu"
-          />
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={imgMenuIcon} alt="" className="absolute block inset-0 max-w-none size-full" />
+          </button>
         )}
       </div>
 
