@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "../../styles/sections/ContactsSection.module.css";
+import { BASE_PATH } from "../../lib/asset";
 
 const navLinks = ["Home", "About", "Experiences", "Products", "Customers"];
 
