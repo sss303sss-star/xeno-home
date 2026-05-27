@@ -88,19 +88,19 @@ export default function CustomersSection() {
     >
       <div className="w-full max-w-[1312px] flex flex-col">
         {/* Section header */}
-        <div className="flex flex-col gap-[40px] md:gap-[64px] xl:flex-row xl:justify-between xl:items-start relative shrink-0 w-full px-[44px] md:px-[32px] xl:px-[80px] 2xl:px-0">
-          <div className="flex items-center justify-center relative shrink-0">
+        <div className="flex flex-col items-start gap-[40px] md:gap-[64px] xl:flex-row xl:justify-between xl:items-start relative shrink-0 w-full px-[44px] md:px-[32px] xl:px-[80px] 2xl:px-0">
+          <div className="flex items-center justify-start relative shrink-0">
             <h2 className={`${styles.heading} text-[28px] xl:text-[48px] 2xl:text-[64px] text-black not-italic`}>
               Customers
             </h2>
           </div>
 
-          <div className="flex gap-[10px] items-center py-[10px] md:py-[16px] relative shrink-0">
+          <div className="flex gap-[10px] items-center py-[10px] md:py-[16px] relative shrink-0 xl:w-[calc(50%-32px)]">
             <div className={`${styles.tagline} text-[12px] md:text-[16px] xl:text-[20px] text-black uppercase`}>
               <p style={{ lineHeight: "normal", marginBottom: 0 }}>Empowering our clients with</p>
               <p style={{ lineHeight: "normal" }}>reliable performance, agility, and value since 2004</p>
             </div>
-            <div className="absolute border-b border-black border-solid border-t bottom-0 left-0 top-0 w-[22px] xl:w-[32px]" />
+            <div className="absolute border-b border-black border-solid border-t bottom-0 left-0 top-0 w-[22px] md:w-[28px] xl:w-[32px]" />
           </div>
         </div>
 

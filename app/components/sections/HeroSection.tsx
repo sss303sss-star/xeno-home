@@ -79,7 +79,7 @@ function HeroNav() {
               <button
                 key={link}
                 onClick={() => handleNav(link)}
-                className={`${styles.navBtn} flex flex-col justify-center relative shrink-0 text-left text-white hover:opacity-70 transition-opacity p-0 h-[38px]`}
+                className={`${styles.navBtn} flex flex-col justify-center relative w-full text-left text-white hover:opacity-70 transition-opacity p-0 h-[38px]`}
               >
                 {link}
               </button>

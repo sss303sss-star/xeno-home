@@ -325,8 +325,10 @@ export default function ProductsSection() {
 
           {/* Right: tagline */}
           <div
-            className={`${styles.descriptionTagline} flex flex-col justify-center leading-[0] relative shrink-0 text-[14px] md:text-[16px] xl:text-[20px] text-black uppercase`}
+            className={`${styles.descriptionTagline} relative flex flex-col justify-center leading-[0] shrink-0 text-[14px] md:text-[16px] xl:text-[20px] text-black uppercase py-[10px] md:py-[16px]`}
           >
+            {/* Top & bottom dash marks (Figma: Frame 1000003663 — strokeTop/Bottom only) */}
+            <div className="absolute inset-y-0 left-0 w-[16px] md:w-[28px] xl:w-[38px] border-t border-b border-black" />
             <p style={{ lineHeight: "normal" }}>
               No cloud. No compromise.
               <br />
