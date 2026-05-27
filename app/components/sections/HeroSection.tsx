@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "../../styles/sections/HeroSection.module.css";
 import { BASE_PATH } from "../../lib/asset";
 
@@ -34,36 +35,36 @@ function HeroNav() {
 
       {/* Btn Nav */}
       <div className={styles.navBar}>
-        <div className="absolute inset-0 backdrop-blur-[20px]" style={{ background: "rgba(142,142,142,0.5)" }} />
-        <svg
+        <div className={styles.navBarBlur} style={{ background: "rgba(142,142,142,0.5)" }} />
+        <Image
+          src={`${BASE_PATH}/icons/alien.svg`}
+          alt=""
           aria-hidden="true"
-          viewBox="0 0 46 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="relative w-[22px] h-[24px]"
-        >
-          <path d="M41.4496 9.10448C36.301 -0.0271368 23.0382 9.47433e-07 23.0382 9.47433e-07C23.0382 9.47433e-07 9.69305 -0.0271368 4.54446 9.10448C-0.164794 17.4627 -1.7437 27.1506 2.36145 33.9077C6.48033 40.6649 17.2992 50 23.0382 50C28.7772 50 39.5137 40.6649 43.6326 33.9077C47.7515 27.1506 46.1588 17.4627 41.4496 9.10448ZM20.6081 37.0149C20.1001 37.7069 14.7455 37.327 10.8601 34.4369C6.97459 31.5468 5.87623 27.5441 6.53525 26.54C7.19427 25.536 12.4527 26.1465 16.3519 29.0366C20.2374 31.9267 21.1435 36.3229 20.6218 37.0149H20.6081ZM35.134 34.4369C31.2485 37.327 25.894 37.7069 25.386 37.0149C24.878 36.3229 25.7704 31.9403 29.6559 29.0366C33.5414 26.1465 38.8135 25.5224 39.4725 26.54C40.1316 27.5577 39.0332 31.5468 35.1477 34.4369H35.134Z" fill="white"/>
-        </svg>
+          width={46}
+          height={50}
+          className={styles.navAlienIcon}
+          unoptimized
+        />
         {open && (
           <button
             onClick={() => setOpen(false)}
-            className="relative size-[30px] overflow-hidden cursor-pointer"
+            className={styles.navCloseBtn}
             aria-label="Close menu"
           >
-            <div className="absolute inset-[23.72%]">
+            <div className={styles.navCloseIconWrap}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={imgCloseIcon} alt="" className="absolute block inset-0 max-w-none size-full" />
+              <img src={imgCloseIcon} alt="" className={styles.navIconImg} />
             </div>
           </button>
         )}
         {!open && (
           <button
             onClick={() => setOpen(true)}
-            className="relative size-[30px] cursor-pointer"
+            className={styles.navMenuBtn}
             aria-label="Open menu"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={imgMenuIcon} alt="" className="absolute block inset-0 max-w-none size-full" />
+            <img src={imgMenuIcon} alt="" className={styles.navIconImg} />
           </button>
         )}
       </div>
@@ -74,7 +75,7 @@ function HeroNav() {
           className={styles.navPopup}
           style={{ background: "rgba(142,142,142,0.5)" }}
         >
-          <div className="flex flex-col gap-[8px] items-start w-full whitespace-nowrap">
+          <div className={styles.navLinkList}>
             {navLinks.map((link) => (
               <button
                 key={link}
@@ -98,7 +99,7 @@ export default function HeroSection() {
       className={styles.heroSection}
     >
       <video
-        className="absolute inset-0 size-full object-cover"
+        className={styles.heroBgVideo}
         autoPlay
         muted
         loop
@@ -106,7 +107,7 @@ export default function HeroSection() {
       >
         <source src={`${BASE_PATH}/videos/hero-bg.mp4`} type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-black/40" />
+      <div className={styles.heroOverlay} />
 
       <HeroNav />
 
@@ -123,7 +124,7 @@ export default function HeroSection() {
               key="ai-badge"
               className={styles.aiBadge}
             >
-              <span className={`${styles.heroWord} text-[24px] md:text-[36px] 2xl:text-[48px]`}>
+              <span className={styles.heroWordBadge}>
                 {text}
               </span>
             </div>
@@ -132,7 +133,7 @@ export default function HeroSection() {
               key={text}
               className={styles.heroWordWrap}
             >
-              <span className={`${styles.heroWord} text-[32px] md:text-[40px] xl:text-[64px]`}>
+              <span className={styles.heroWordText}>
                 {text}
               </span>
             </div>

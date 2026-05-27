@@ -8,8 +8,36 @@
   @apply flex items-center justify-between h-[48px] px-[14px] rounded-[12px] relative overflow-hidden;
 }
 
+.navBarBlur {
+  @apply absolute inset-0 backdrop-blur-[20px];
+}
+
+.navAlienIcon {
+  @apply relative w-[22px] h-[24px];
+}
+
+.navCloseBtn {
+  @apply relative size-[30px] overflow-hidden cursor-pointer;
+}
+
+.navCloseIconWrap {
+  @apply absolute inset-[23.72%];
+}
+
+.navMenuBtn {
+  @apply relative size-[30px] cursor-pointer;
+}
+
+.navIconImg {
+  @apply absolute block inset-0 max-w-none size-full;
+}
+
 .navPopup {
   @apply flex flex-col items-center p-[24px] rounded-[12px] w-full backdrop-blur-[20px];
+}
+
+.navLinkList {
+  @apply flex flex-col gap-[8px] items-start w-full whitespace-nowrap;
 }
 
 .navBtn {
@@ -24,6 +52,14 @@
   @apply bg-black block relative w-full overflow-hidden h-[700px] md:h-[1073px];
 }
 
+.heroBgVideo {
+  @apply absolute inset-0 size-full object-cover;
+}
+
+.heroOverlay {
+  @apply absolute inset-0 bg-black/40;
+}
+
 .heroTextContainer {
   @apply absolute content-start flex flex-wrap items-start justify-center -translate-y-1/2 left-0 right-0 px-[50px] gap-x-[18px] gap-y-[4px] top-[calc(50%-50px)] md:left-1/2 md:right-auto md:px-0 md:-translate-x-1/2 md:w-[355px] md:gap-y-0 md:top-[calc(50%-79.5px)] xl:w-[886px] xl:gap-y-[8px] xl:top-[calc(50%-80px)];
 }
@@ -32,18 +68,24 @@
   @apply border-solid border-white flex items-center shrink-0 whitespace-nowrap border-2 rounded-[9px] px-[13px] h-[40px] md:border-4 md:rounded-[19px] md:px-[23px] md:h-[64px] xl:h-[70px] xl:px-[27px] 2xl:h-[80px];
 }
 
+.heroWordBadge {
+  font-family: var(--font-tomorrow);
+  line-height: normal;
+  @apply text-white not-italic text-[24px] md:text-[36px] 2xl:text-[48px];
+}
+
 .heroWordWrap {
   @apply flex items-center shrink-0 whitespace-nowrap h-[40px] md:h-[64px] xl:h-[70px] 2xl:h-[80px];
 }
 
-.serviceListWrap {
-  @apply absolute flex flex-col justify-center whitespace-nowrap left-[37px] bottom-[37px] md:bottom-auto md:top-[838px] md:-translate-y-1/2 md:left-[calc(14.29%-14px)];
-}
-
-.heroWord {
+.heroWordText {
   font-family: var(--font-tomorrow);
   line-height: normal;
-  @apply text-white not-italic;
+  @apply text-white not-italic text-[32px] md:text-[40px] xl:text-[64px];
+}
+
+.serviceListWrap {
+  @apply absolute flex flex-col justify-center whitespace-nowrap left-[37px] bottom-[37px] md:bottom-auto md:top-[838px] md:-translate-y-1/2 md:left-[calc(14.29%-14px)];
 }
 
 .serviceList {
