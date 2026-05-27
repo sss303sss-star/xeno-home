@@ -1,6 +1,4 @@
-.tomorrow { font-family: var(--font-tomorrow); }
-.monda { font-family: var(--font-monda); font-weight: 400; }
-.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+@reference "../globals.css";
 
 .heading {
   font-family: var(--font-tomorrow);
@@ -13,15 +11,39 @@
   line-height: normal;
 }
 
+.testimonialCard {
+  @apply bg-white flex flex-col h-[363px] md:h-[443px] overflow-hidden relative rounded-[16px] md:rounded-[24px] w-full;
+}
+
+.testimonialLogoWrap {
+  @apply flex items-start h-[70px] md:h-[120px] group-hover:h-0 group-hover:pt-0 group-hover:opacity-0 overflow-hidden pt-[32px] px-[24px] md:px-[32px] shrink-0 w-full transition-all duration-300 ease-out;
+}
+
 .testimonialQuote {
   font-family: var(--font-tomorrow);
   line-height: 1.6;
+  @apply text-[20px] md:text-[28px] text-black px-[24px] md:px-[32px] pt-[24px] pb-[80px] shrink-0 opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-out;
+}
+
+.testimonialExtended {
+  @apply absolute inset-0 flex flex-col gap-[1em] px-[24px] md:px-[32px] pt-[24px] pb-[120px] overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out;
+}
+
+.testimonialExtendedPara {
+  font-family: var(--font-tomorrow);
+  line-height: 1.6;
+  @apply text-[18px] md:text-[22px] text-black leading-[2];
+}
+
+.testimonialAttribution {
+  @apply absolute bottom-0 left-0 right-0 flex items-end pb-[24px] pt-[32px] px-[24px] md:px-[32px];
 }
 
 .testimonialName {
   font-family: var(--font-monda);
   font-weight: 500;
   line-height: normal;
+  @apply text-[16px];
 }
 
 .testimonialCompany {
@@ -29,4 +51,5 @@
   font-weight: 400;
   line-height: normal;
   color: #757575;
+  @apply text-[12px] md:text-[16px];
 }

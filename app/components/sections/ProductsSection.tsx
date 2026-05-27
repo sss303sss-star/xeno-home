@@ -195,16 +195,16 @@ function TachyonIcon() {
 
 function ProductCard({ product }: { product: (typeof products)[number] }) {
   return (
-    <div className="bg-black backdrop-blur-[20px] flex flex-col gap-[16px] items-start overflow-clip pb-[40px] pt-[24px] relative rounded-[24px] shrink-0 w-full px-[32px] md:px-[40px]">
+    <div className={styles.productCard}>
       <div
-        className={`${styles.cardName} flex flex-col justify-center leading-[0] relative shrink-0 text-[20px] md:text-[32px] text-white whitespace-nowrap`}
+        className={styles.cardName}
       >
         <p style={{ lineHeight: "normal" }}>{product.name}</p>
       </div>
       <div className="flex flex-col gap-[24px] items-start pr-[8px] relative rounded-[16px] shrink-0 w-full">
         {/* Description: 14px mobile → 16px tablet → 20px laptop */}
         <div
-          className={`${styles.cardDescription} flex flex-col justify-center leading-[0] min-w-full relative shrink-0 text-[14px] md:text-[16px] xl:text-[20px] text-white uppercase w-[min-content]`}
+          className={styles.cardDescription}
         >
           <p style={{ lineHeight: "normal" }}>{product.description}</p>
         </div>
@@ -237,19 +237,14 @@ function ProductCard({ product }: { product: (typeof products)[number] }) {
 
 function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
   return (
-    <div
-      className="shrink-0 snap-start flex flex-col justify-between rounded-[24px] border border-[#d2d2d2]
-      w-[300px] h-[180px] px-[24px] py-[24px]
-      md:w-[450px] md:h-[290px] md:px-[40px] md:py-[40px]
-      2xl:w-[500px]"
-    >
+    <div className={styles.featureCard}>
       <div
-        className={`${styles.featureTitle} text-black text-[16px] md:text-[26px] font-medium leading-[1.2]`}
+        className={styles.featureTitle}
       >
         {feature.title}
       </div>
       <div
-        className={`${styles.featureDescription} text-black text-[14px] md:text-[18px] font-normal leading-[1.6]`}
+        className={styles.featureDescription}
       >
         {feature.description}
       </div>
@@ -268,7 +263,7 @@ export default function ProductsSection() {
         {/* Header */}
         <div className="flex items-center relative shrink-0 w-full px-[32px] xl:px-[80px] 2xl:px-0">
           <div
-            className={`${styles.heading} flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[28px] xl:text-[48px] 2xl:text-[64px] text-black whitespace-nowrap`}
+            className={styles.heading}
           >
             <p style={{ lineHeight: "normal" }}>Products</p>
           </div>
@@ -280,20 +275,12 @@ export default function ProductsSection() {
         <div className="flex items-center relative shrink-0 w-full py-[40px] md:pt-[80px] md:pb-[40px] px-[32px] xl:px-[80px] 2xl:px-0">
           <div className="flex gap-[16px] items-center relative shrink-0 py-[10px] md:py-[12px] xl:py-[16px]">
             <div
-              className={`${styles.subHeading} flex flex-col justify-center leading-[0] relative shrink-0 text-[18px] md:text-[28px] xl:text-[32px] 2xl:text-[40px] text-black uppercase whitespace-nowrap`}
+              className={styles.subHeadingMain}
             >
               <p style={{ lineHeight: "normal" }}>{"Work faster. "}</p>
             </div>
-            <div
-              className="bg-white border-black border-solid flex items-center justify-center relative shrink-0
-                border-[1.5px] rounded-[6px] px-[8px] py-[3px]
-                md:border-2 md:rounded-[8px] md:px-[10px] md:py-[4px]
-                xl:border-[3px] xl:rounded-[10px] xl:px-[14px] xl:py-[6px]
-                2xl:rounded-[16px] 2xl:px-[20px] 2xl:py-[10px]"
-            >
-              <div
-                className={`${styles.subHeading} flex flex-col justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] xl:text-[22px] text-black uppercase whitespace-nowrap`}
-              >
+            <div className={styles.subHeadingBadgeWrap}>
+              <div className={styles.subHeadingBadgeText}>
                 <p style={{ lineHeight: "normal" }}>Kori AI</p>
               </div>
             </div>
@@ -325,7 +312,7 @@ export default function ProductsSection() {
 
           {/* Right: tagline */}
           <div
-            className={`${styles.descriptionTagline} relative flex flex-col justify-center leading-[0] shrink-0 text-[14px] md:text-[16px] xl:text-[20px] text-black uppercase py-[10px] md:py-[16px]`}
+            className={styles.descriptionTagline}
           >
             {/* Top & bottom dash marks (Figma: Frame 1000003663 — strokeTop/Bottom only) */}
             <div className="absolute inset-y-0 left-0 w-[16px] md:w-[28px] xl:w-[38px] border-t border-b border-black" />

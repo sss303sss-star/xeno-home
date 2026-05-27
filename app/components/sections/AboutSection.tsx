@@ -21,14 +21,14 @@ export default function AboutSection() {
         {/* Header: mobile/tablet=flex-col items-center, laptop=flex-row items-center justify-between */}
         <div className="flex flex-col gap-[32px] items-start xl:flex-row xl:items-center xl:justify-between relative shrink-0 w-full">
         <div className="flex flex-col items-center justify-center shrink-0">
-          <div className={`${styles.heading} flex flex-col justify-center not-italic shrink-0 text-[28px] xl:text-[48px] 2xl:text-[64px] text-black whitespace-nowrap tracking-[0em]`}>
+          <div className={styles.heading}>
             <p style={{ lineHeight: "normal" }}>About</p>
           </div>
         </div>
 
         {/* Tagline: mobile=flex-col, tablet+=flex-row; deco width 16→22→32 */}
         <div className="flex flex-col gap-[10px] items-center py-[10px] md:flex-row md:gap-[10px] md:py-[16px] relative shrink-0">
-          <div className={`${styles.tagline} flex flex-col justify-center leading-[0] shrink-0 text-[12px] md:text-[16px] xl:text-[20px] text-black uppercase tracking-[0em]`}>
+          <div className={styles.tagline}>
             <p className="whitespace-pre" style={{ lineHeight: "normal", marginBottom: 0 }}>
               {"Driving automation and innovation "}
             </p>
@@ -81,21 +81,18 @@ export default function AboutSection() {
               boxed ? (
                 <div
                   key={text}
-                  className="bg-white border-black border-solid flex items-center justify-center relative shrink-0
-                    border-2 rounded-[8px] px-[10px] py-[7px]
-                    md:border-[3px] md:rounded-[11px] md:px-[16px] md:py-[10px]
-                    xl:rounded-[16px] xl:px-[20px] xl:py-[12px]"
+                  className={styles.tagBadge}
                 >
-                  <div className={`${styles.tagWordBoxed} flex flex-col justify-center not-italic shrink-0 text-[16px] md:text-[22px] xl:text-[28px] text-black uppercase whitespace-nowrap tracking-[0em]`}>
+                  <div className={styles.tagWordBoxed}>
                     <p style={{ lineHeight: "normal" }}>{text}</p>
                   </div>
                 </div>
               ) : (
                 <div
                   key={text}
-                  className="flex items-center justify-center relative shrink-0 py-[6px] md:py-[8px]"
+                  className={styles.tagWordWrap}
                 >
-                  <div className={`${styles.tagWord} flex flex-col justify-center not-italic shrink-0 text-[18px] md:text-[24px] xl:text-[36px] text-black uppercase whitespace-nowrap tracking-[0em]`}>
+                  <div className={styles.tagWord}>
                     <p className="whitespace-pre" style={{ lineHeight: "normal" }}>{text}</p>
                   </div>
                 </div>
@@ -107,7 +104,7 @@ export default function AboutSection() {
           <div className="w-full border-t border-[#cdcdcd]" />
 
           {/* Body text: 14px mobile (line-height normal), 19px tablet+ (line-height 33px) */}
-          <div className={`${styles.bodyText} flex flex-col justify-center shrink-0 w-full`}>
+          <div className={styles.bodyText}>
             <p className="text-[14px] text-left md:text-[19px] leading-normal md:leading-[33px] tracking-[0em]">
               We focus on turning complex data into clear insights, automating processes, and creating
               tools that anyone in the company can use—without technical barriers.

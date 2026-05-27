@@ -1,45 +1,69 @@
-.tomorrow { font-family: var(--font-tomorrow); }
-.monda { font-family: var(--font-monda); font-weight: 400; }
-.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+@reference "../globals.css";
 
 .heading {
   font-family: var(--font-tomorrow);
-  line-height: normal;
+  @apply flex flex-col justify-center leading-[0] not-italic relative shrink-0 text-[28px] xl:text-[48px] 2xl:text-[64px] text-black whitespace-nowrap;
 }
 
-.subHeading {
+.subHeadingMain {
   font-family: var(--font-monda);
   font-weight: 500;
-  line-height: normal;
+  @apply flex flex-col justify-center leading-[0] relative shrink-0 text-[18px] md:text-[28px] xl:text-[32px] 2xl:text-[40px] text-black uppercase whitespace-nowrap;
+}
+
+.subHeadingBadgeWrap {
+  @apply bg-white border-black border-solid flex items-center justify-center relative shrink-0
+    border-[1.5px] rounded-[6px] px-[8px] py-[3px]
+    md:border-2 md:rounded-[8px] md:px-[10px] md:py-[4px]
+    xl:border-[3px] xl:rounded-[10px] xl:px-[14px] xl:py-[6px]
+    2xl:rounded-[16px] 2xl:px-[20px] 2xl:py-[10px];
+}
+
+.subHeadingBadgeText {
+  font-family: var(--font-monda);
+  font-weight: 500;
+  @apply flex flex-col justify-center leading-[0] relative shrink-0 text-[14px] md:text-[18px] xl:text-[22px] text-black uppercase whitespace-nowrap;
+}
+
+.productCard {
+  @apply bg-black backdrop-blur-[20px] flex flex-col gap-[16px] items-start overflow-clip pb-[40px] pt-[24px] relative rounded-[24px] shrink-0 w-full px-[32px] md:px-[40px];
 }
 
 .cardName {
   font-family: var(--font-monda);
   font-weight: 500;
-  line-height: normal;
+  @apply flex flex-col justify-center leading-[0] relative shrink-0 text-[20px] md:text-[32px] text-white whitespace-nowrap;
 }
 
 .cardDescription {
   font-family: var(--font-monda);
   font-weight: 500;
-  line-height: normal;
+  @apply flex flex-col justify-center leading-[0] min-w-full relative shrink-0 text-[14px] md:text-[16px] xl:text-[20px] text-white uppercase w-[min-content];
 }
 
 .descriptionTagline {
   font-family: var(--font-monda);
   font-weight: 500;
-  line-height: normal;
+  @apply relative flex flex-col justify-center leading-[0] shrink-0 text-[14px] md:text-[16px] xl:text-[20px] text-black uppercase py-[10px] md:py-[16px];
+}
+
+.featureCard {
+  @apply shrink-0 snap-start flex flex-col justify-between rounded-[24px] border border-[#d2d2d2]
+    w-[300px] h-[180px] px-[24px] py-[24px]
+    md:w-[450px] md:h-[290px] md:px-[40px] md:py-[40px]
+    2xl:w-[500px];
 }
 
 .featureTitle {
   font-family: var(--font-monda);
   font-weight: 500;
-  line-height: normal;
+  @apply text-black text-[16px] md:text-[26px] leading-[1.2];
 }
 
 .featureDescription {
   font-family: var(--font-monda);
-  font-weight: 500;
+  font-weight: 400;
+  @apply text-black text-[14px] md:text-[18px] leading-[1.6];
 }
 
 @keyframes featuresScroll {

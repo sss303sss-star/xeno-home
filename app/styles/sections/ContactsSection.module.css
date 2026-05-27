@@ -1,25 +1,46 @@
-.tomorrow { font-family: var(--font-tomorrow); }
-.monda { font-family: var(--font-monda); font-weight: 400; }
-.mondaMedium { font-family: var(--font-monda); font-weight: 500; }
+@reference "../globals.css";
 
 .contactInfo {
   font-family: var(--font-monda);
   font-weight: 400;
+  line-height: 2;
+  @apply text-white text-[12px] md:text-[16px];
 }
 
 .address {
   font-family: var(--font-monda);
   font-weight: 500;
   text-transform: uppercase;
+  line-height: 1.6;
+  @apply flex flex-wrap gap-x-[4px] text-white text-[12px] md:text-[15px];
 }
 
 .navLink {
   font-family: var(--font-monda);
   font-weight: 400;
+  line-height: 2;
+  @apply text-left hover:opacity-70 transition-opacity text-[16px] md:text-[20px];
 }
 
 .copyright {
   font-family: var(--font-monda);
   font-weight: 500;
   text-transform: uppercase;
+  line-height: 1.6;
+  @apply text-white text-[12px] md:text-[13px] shrink-0 xl:w-[500px];
+}
+
+.alienIconWrap {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 33px;
+  height: 36px;
+}
+
+@media (min-width: 768px) {
+  .alienIconWrap {
+    width: 46px;
+    height: 50px;
+  }
 }

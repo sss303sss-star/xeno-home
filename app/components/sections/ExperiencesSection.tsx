@@ -16,7 +16,7 @@ const featuredProjects = [
 
 function TagLg({ label }: { label: string }) {
   return (
-    <span className={`${styles.tag} backdrop-blur-[10px] bg-white/80 border border-solid border-[#d5d5d5] rounded-[5px] px-[8px] py-[5px] text-[12px] 2xl:px-[12px] 2xl:py-[6px] 2xl:text-[16px] 2xl:group-hover:px-[8px] 2xl:group-hover:py-[5px] 2xl:group-hover:text-[12px] text-[#5f5f5f] uppercase whitespace-nowrap transition-all duration-300 ease-out`}>
+    <span className={styles.tagLg}>
       {label}
     </span>
   );
@@ -24,7 +24,7 @@ function TagLg({ label }: { label: string }) {
 
 function TagSm({ label }: { label: string }) {
   return (
-    <span className={`${styles.tag} backdrop-blur-[10px] bg-white/80 border border-solid border-[#d5d5d5] rounded-[5px] px-[8px] py-[5px] text-[#5f5f5f] text-[12px] uppercase whitespace-nowrap`}>
+    <span className={styles.tagSm}>
       {label}
     </span>
   );

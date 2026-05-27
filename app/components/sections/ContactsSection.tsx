@@ -37,18 +37,12 @@ export default function ContactsSection() {
         <div className="flex flex-col xl:flex-row pb-[80px] gap-[50px] xl:gap-0">
           {/* Contact info block */}
           <div className="flex flex-col gap-[32px] shrink-0 pr-[60px] xl:w-[500px]">
-            <p
-              className={`${styles.contactInfo} text-white text-[12px] md:text-[16px]`}
-              style={{ lineHeight: 2 }}
-            >
+            <p className={styles.contactInfo}>
               Mail . contact@xenoimpact.com
               <br />
               Tel . 02.3444.0201
             </p>
-            <div
-              className={`${styles.address} flex flex-wrap gap-x-[4px] text-white text-[12px] md:text-[15px]`}
-              style={{ lineHeight: 1.6 }}
-            >
+            <div className={styles.address}>
               <span>48, Achasan-ro 17-gil, </span>
               <span>Seongdong-gu, </span>
               <span>Seoul, </span>
@@ -63,15 +57,14 @@ export default function ContactsSection() {
                 <button
                   key={link}
                   onClick={() => handleScroll(link)}
-                  className={`${styles.navLink} text-left hover:opacity-70 transition-opacity text-[16px] md:text-[20px]`}
-                  style={{ lineHeight: 2 }}
+                  className={styles.navLink}
                 >
                   {link}
                 </button>
               ))}
             </div>
             {/* Alien icon: 33×36 mobile / 46×50 md+ */}
-            <div className="absolute right-0 top-[10px] w-[33px] h-[36px] md:w-[46px] md:h-[50px]">
+            <div className={styles.alienIconWrap}>
               <Image
                 src={`${BASE_PATH}/icons/alien.svg`}
                 alt=""
@@ -91,8 +84,7 @@ export default function ContactsSection() {
         <div className="flex flex-col md:gap-[20px] xl:flex-row xl:gap-0 xl:items-start">
           {/* Copyright */}
           <p
-            className={`${styles.copyright} text-white text-[12px] md:text-[13px] shrink-0 xl:w-[500px]`}
-            style={{ lineHeight: 1.6 }}
+            className={styles.copyright}
           >
             © 2025 xenoimpact Inc.
             <br />

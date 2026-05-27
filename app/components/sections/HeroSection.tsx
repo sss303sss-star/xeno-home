@@ -30,10 +30,10 @@ function HeroNav() {
   };
 
   return (
-    <div className="fixed z-20 flex flex-col gap-[8px] left-[16px] right-[16px] top-[16px] md:left-1/2 md:right-auto md:-translate-x-1/2 md:top-[40px] md:w-[420px]">
+    <div className={styles.navWrapper}>
 
       {/* Btn Nav */}
-      <div className="flex items-center justify-between h-[48px] px-[14px] rounded-[12px] relative overflow-hidden">
+      <div className={styles.navBar}>
         <div className="absolute inset-0 backdrop-blur-[20px]" style={{ background: "rgba(142,142,142,0.5)" }} />
         <svg
           aria-hidden="true"
@@ -71,7 +71,7 @@ function HeroNav() {
       {/* Popup / Menu */}
       {open && (
         <div
-          className="flex flex-col items-center p-[24px] rounded-[12px] w-full backdrop-blur-[20px]"
+          className={styles.navPopup}
           style={{ background: "rgba(142,142,142,0.5)" }}
         >
           <div className="flex flex-col gap-[8px] items-start w-full whitespace-nowrap">
@@ -79,7 +79,7 @@ function HeroNav() {
               <button
                 key={link}
                 onClick={() => handleNav(link)}
-                className={`${styles.navBtn} flex flex-col justify-center relative w-full text-left text-white hover:opacity-70 transition-opacity p-0 h-[38px]`}
+                className={styles.navBtn}
               >
                 {link}
               </button>
@@ -95,7 +95,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="bg-black block relative w-full overflow-hidden h-[700px] md:h-[1073px]"
+      className={styles.heroSection}
     >
       <video
         className="absolute inset-0 size-full object-cover"
@@ -115,37 +115,24 @@ export default function HeroSection() {
           Tablet:  w-355, centered (left-1/2 -translateX), top 50%-79.5px, -translateXY
           Laptop:  w-897, centered */}
       <div
-        className="
-          absolute content-start flex flex-wrap items-start justify-center -translate-y-1/2
-          left-0 right-0 px-[50px] gap-x-[18px] gap-y-[4px]
-          top-[calc(50%-50px)]
-          md:left-1/2 md:right-auto md:px-0 md:-translate-x-1/2
-          md:w-[355px] md:gap-y-0 md:top-[calc(50%-79.5px)]
-          xl:w-[886px] xl:gap-y-[8px] xl:top-[calc(50%-80px)]
-        "
+        className={styles.heroTextContainer}
       >
         {heroWords.map(({ text, badge }) =>
           badge ? (
             <div
               key="ai-badge"
-              className="
-                border-solid border-white flex items-center shrink-0 whitespace-nowrap
-                border-2 rounded-[9px] px-[13px] h-[40px]
-                md:border-4 md:rounded-[19px] md:px-[23px] md:h-[64px]
-                xl:h-[70px] xl:px-[27px]
-                2xl:h-[80px]
-              "
+              className={styles.aiBadge}
             >
-              <span className={`${styles.heroWord} text-white not-italic text-[24px] md:text-[36px] 2xl:text-[48px]`}>
+              <span className={`${styles.heroWord} text-[24px] md:text-[36px] 2xl:text-[48px]`}>
                 {text}
               </span>
             </div>
           ) : (
             <div
               key={text}
-              className="flex items-center shrink-0 whitespace-nowrap h-[40px] md:h-[64px] xl:h-[70px] 2xl:h-[80px]"
+              className={styles.heroWordWrap}
             >
-              <span className={`${styles.heroWord} text-white not-italic text-[32px] md:text-[40px] xl:text-[64px]`}>
+              <span className={`${styles.heroWord} text-[32px] md:text-[40px] xl:text-[64px]`}>
                 {text}
               </span>
             </div>
@@ -157,13 +144,9 @@ export default function HeroSection() {
           Mobile:  left-[37px], bottom-[37px]
           Tablet+: left calc(14.29%-14px), top-[838px], -translateY-1/2 */}
       <div
-        className="
-          absolute flex flex-col justify-center whitespace-nowrap
-          left-[37px] bottom-[37px]
-          md:bottom-auto md:top-[838px] md:-translate-y-1/2 md:left-[calc(14.29%-14px)]
-        "
+        className={styles.serviceListWrap}
       >
-        <p className={`${styles.serviceList} text-white not-italic text-[15px] md:text-[20px]`}>
+        <p className={styles.serviceList}>
           DX/AX Consulting
           <br />
           On-premise AI Application Deployment

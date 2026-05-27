@@ -41,10 +41,10 @@ const testimonials = [
 
 function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {
   return (
-    <div className="group bg-white flex flex-col h-[363px] md:h-[443px] overflow-hidden relative rounded-[16px] md:rounded-[24px] w-full">
+    <div className={`group ${styles.testimonialCard}`}>
 
       {/* Marker — collapses on hover */}
-      <div className="flex items-start h-[70px] md:h-[120px] group-hover:h-0 group-hover:pt-0 group-hover:opacity-0 overflow-hidden pt-[32px] px-[24px] md:px-[32px] shrink-0 w-full transition-all duration-300 ease-out">
+      <div className={styles.testimonialLogoWrap}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={item.logo.src} alt={item.logo.alt} className={`block shrink-0 ${item.logo.className}`} />
       </div>
@@ -52,14 +52,14 @@ function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {
       {/* Quote area */}
       <div className="flex flex-1 flex-col min-h-0 w-full relative">
         {/* Default short quote — fades out on hover */}
-        <p className={`${styles.testimonialQuote} text-[20px] md:text-[28px] text-black px-[24px] md:px-[32px] pt-[24px] pb-[80px] shrink-0 opacity-100 group-hover:opacity-0 transition-opacity duration-300 ease-out`}>
+        <p className={styles.testimonialQuote}>
           {item.quote}
         </p>
 
         {/* Extended quote — fades in on hover, scrollable */}
-        <div className="absolute inset-0 flex flex-col gap-[1em] px-[24px] md:px-[32px] pt-[24px] pb-[120px] overflow-y-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+        <div className={styles.testimonialExtended}>
           {item.extendedQuote.map((para, i) => (
-            <p key={i} className={`${styles.testimonialQuote} text-[18px] md:text-[22px] text-black leading-[2]`}>
+            <p key={i} className={styles.testimonialExtendedPara}>
               {para}
             </p>
           ))}
@@ -68,12 +68,12 @@ function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {
 
       {/* Attribution with gradient */}
       <div
-        className="absolute bottom-0 left-0 right-0 flex items-end pb-[24px] pt-[32px] px-[24px] md:px-[32px]"
+        className={styles.testimonialAttribution}
         style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 23.077%)" }}
       >
         <div className="flex flex-1 flex-col min-w-0">
-          <p className={`${styles.testimonialName} text-[16px]`}>{item.name}</p>
-          <p className={`${styles.testimonialCompany} text-[12px] md:text-[16px]`}>{item.company}</p>
+          <p className={styles.testimonialName}>{item.name}</p>
+          <p className={styles.testimonialCompany}>{item.company}</p>
         </div>
       </div>
     </div>
