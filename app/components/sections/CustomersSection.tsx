@@ -41,7 +41,7 @@ const testimonials = [
 
 function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {
   return (
-    <div className={`group ${styles.testimonialCard}`}>
+    <div className={styles.testimonialCard}>
 
       {/* Marker — collapses on hover */}
       <div className={styles.testimonialLogoWrap}>

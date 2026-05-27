@@ -3,7 +3,15 @@
 .tagLg {
   font-family: var(--font-monda);
   font-weight: 500;
-  @apply backdrop-blur-[10px] bg-white/80 border border-solid border-[#d5d5d5] rounded-[5px] px-[8px] py-[5px] text-[12px] 2xl:px-[12px] 2xl:py-[6px] 2xl:text-[16px] 2xl:group-hover:px-[8px] 2xl:group-hover:py-[5px] 2xl:group-hover:text-[12px] text-[#5f5f5f] uppercase whitespace-nowrap transition-all duration-300 ease-out;
+  @apply backdrop-blur-[10px] bg-white/80 border border-solid border-[#d5d5d5] rounded-[5px] px-[8px] py-[5px] text-[12px] 2xl:px-[12px] 2xl:py-[6px] 2xl:text-[16px] text-[#5f5f5f] uppercase whitespace-nowrap transition-all duration-300 ease-out;
+}
+
+@media (min-width: 1780px) {
+  :global(.group:hover) .tagLg {
+    padding-inline: 8px;
+    padding-block: 5px;
+    font-size: 12px;
+  }
 }
 
 .tagSm {
