@@ -38,9 +38,9 @@ export default function ContactsSection() {
           {/* Contact info block */}
           <div className="flex flex-col gap-[32px] shrink-0 pr-[60px] xl:w-[500px]">
             <p className={styles.contactInfo}>
-              Mail . contact@xenoimpact.com
+              Mail . <a href="mailto:contact@xenoimpact.com" className="hover:underline text-white">contact@xenoimpact.com</a>
               <br />
-              Tel . 02.3444.0201
+              Tel . <a href="tel:02-3444-0201" className="hover:underline text-white">02.3444.0201</a>
             </p>
             <div className={styles.address}>
               <span>48, Achasan-ro 17-gil, </span>
