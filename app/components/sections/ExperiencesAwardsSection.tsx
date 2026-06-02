@@ -13,7 +13,7 @@ const awards = [
 export default function ExperiencesAwardsSection() {
   return (
     <div className={`${styles.awardsWrapper} w-full overflow-hidden pt-[40px] md:pt-[64px] xl:pt-[80px]`}>
-      <div className={`${styles.awardsTrack} flex gap-[32px]`}>
+      <div className={`${styles.awardsTrack} flex gap-[32px] w-max`}>
         {[...awards, ...awards].map((award, i) => (
           <div
             key={i}

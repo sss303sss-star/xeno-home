@@ -39,3 +39,15 @@
   text-transform: uppercase;
   @apply flex flex-col justify-center shrink-0 w-full;
 }
+
+.aboutImg {
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0) !important;
+}
+

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "../../styles/sections/ExperiencesSection.module.css";
 
 const years = ["2025", "2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009"];
@@ -174,16 +174,63 @@ export default function ExperiencesYearSection() {
   const [activeYear, setActiveYear] = useState("2025");
   const currentExperiences = experienceData[activeYear] ?? [];
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isDown, setIsDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [hasDragged, setHasDragged] = useState(false);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!scrollRef.current) return;
+    setIsDown(true);
+    setHasDragged(false);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDown(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDown(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDown || !scrollRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    if (Math.abs(x - startX) > 5) {
+      setHasDragged(true);
+    }
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleYearClick = (year: string) => {
+    if (hasDragged) return;
+    setActiveYear(year);
+  };
+
   return (
     <div className="flex flex-col gap-0 md:gap-[24px] xl:gap-[40px] xl:px-[80px] 2xl:px-0 w-full 2xl:max-w-[1352px]">
       {/* Year tabs */}
       <div className="relative flex items-center w-full">
-        <div className="flex flex-1 min-w-0 items-center overflow-x-auto pb-[16px] pt-[40px] md:pb-[24px] md:pt-[80px] px-[32px]">
-          <div className="flex items-center gap-[16px] md:gap-[32px] shrink-0 pr-[64px] md:pr-[128px]">
+        <div
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className={`flex flex-1 min-w-0 items-center overflow-x-auto pb-[16px] pt-[40px] md:pb-[24px] md:pt-[80px] px-[32px] select-none ${
+            isDown ? "cursor-grabbing" : "cursor-grab"
+          }`}
+        >
+          <div className="flex items-center gap-[16px] md:gap-[32px] shrink-0 pr-[32px]">
             {years.map((year) => (
               <button
                 key={year}
-                onClick={() => setActiveYear(year)}
+                onClick={() => handleYearClick(year)}
                 className={`${styles.yearBtn} ${
                   activeYear === year
                     ? 'text-[24px] md:text-[56px] text-black'

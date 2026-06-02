@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../../styles/sections/HeroSection.module.css";
 import { BASE_PATH } from "../../lib/asset";
@@ -25,6 +25,13 @@ const heroWords = [
 //   Position: top-[40px] left-1/2 -translate-x-1/2 w-[420px]
 function HeroNav() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleScroll = () => setOpen(false);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [open]);
 
   const handleNav = (id: string) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
@@ -70,24 +77,22 @@ function HeroNav() {
       </div>
 
       {/* Popup / Menu */}
-      {open && (
-        <div
-          className={styles.navPopup}
-          style={{ background: "rgba(142,142,142,0.5)" }}
-        >
-          <div className={styles.navLinkList}>
-            {navLinks.map((link) => (
-              <button
-                key={link}
-                onClick={() => handleNav(link)}
-                className={styles.navBtn}
-              >
-                {link}
-              </button>
-            ))}
-          </div>
+      <div
+        className={`${styles.navPopup} ${open ? styles.popupOpen : ""}`}
+        style={{ background: "rgba(142,142,142,0.5)" }}
+      >
+        <div className={styles.navLinkList}>
+          {navLinks.map((link) => (
+            <button
+              key={link}
+              onClick={() => handleNav(link)}
+              className={styles.navBtn}
+            >
+              {link}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }

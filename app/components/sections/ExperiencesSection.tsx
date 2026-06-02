@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useRef } from "react";
 import styles from "../../styles/sections/ExperiencesSection.module.css";
 import ExperiencesAwardsSection from "./ExperiencesAwardsSection";
 import ExperiencesYearSection from "./ExperiencesYearSection";
@@ -30,6 +33,135 @@ function TagSm({ label }: { label: string }) {
   );
 }
 
+type Project = (typeof featuredProjects)[number];
+
+function TabletProjectRow({ project }: { project: Project }) {
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const rowRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!rowRef.current) return;
+    const rect = rowRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const dx = e.clientX - centerX;
+    const dy = e.clientY - centerY;
+
+    let tx = dx * 0.1;
+    let ty = dy * 0.2;
+
+    const maxX = 30;
+    const maxY = 60;
+    const rx = tx / maxX;
+    const ry = ty / maxY;
+    const dist = Math.sqrt(rx * rx + ry * ry);
+    if (dist > 1) {
+      tx = tx / dist;
+      ty = ty / dist;
+    }
+
+    setOffset({ x: tx, y: ty });
+  };
+
+  const handleMouseLeave = () => {
+    setOffset({ x: 0, y: 0 });
+  };
+
+  return (
+    <div
+      ref={rowRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="group relative flex gap-[32px] py-[8px] items-center border-b border-solid border-[#e0e0e0] hover:z-20"
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${BASE_PATH}/images/projects/${project.image}`}
+        alt=""
+        aria-hidden="true"
+        className="absolute left-0 top-1/2 w-[197px] h-[106px] object-cover opacity-0 group-hover:opacity-100 pointer-events-none z-10"
+        style={{
+          transform: `translate(${offset.x}px, calc(-40% + ${offset.y}px))`,
+          transition: "opacity 0.3s ease-out, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)"
+        }}
+      />
+      <div className="flex gap-[56px] group-hover:gap-[70px] h-[128px] items-center pr-[24px] shrink-0 transition-[gap] duration-300 ease-out">
+        <p className={`${styles.projectDescription} text-[12px] text-black group-hover:text-[#757575] w-[200px] leading-normal transition-colors duration-300 ease-out`}>{project.description}</p>
+        <span className={`${styles.projectShortName} text-[40px] text-black group-hover:text-[#757575] transition-colors duration-300 ease-out`}>{project.shortName}</span>
+      </div>
+      <div className="flex-1 flex flex-wrap gap-[10px] items-center justify-end">
+        {project.tags.map((tag) => (
+          <TagSm key={tag} label={tag} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DesktopProjectRow({ project }: { project: Project }) {
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const rowRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!rowRef.current) return;
+    const rect = rowRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const dx = e.clientX - centerX;
+    const dy = e.clientY - centerY;
+
+    let tx = dx * 0.1;
+    let ty = dy * 0.2;
+
+    const maxX = 30;
+    const maxY = 60;
+    const rx = tx / maxX;
+    const ry = ty / maxY;
+    const dist = Math.sqrt(rx * rx + ry * ry);
+    if (dist > 1) {
+      tx = tx / dist;
+      ty = ty / dist;
+    }
+
+    setOffset({ x: tx, y: ty });
+  };
+
+  const handleMouseLeave = () => {
+    setOffset({ x: 0, y: 0 });
+  };
+
+  return (
+    <div
+      ref={rowRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="group relative flex items-center justify-between py-[24px] border-b border-solid border-[#e0e0e0] hover:z-20"
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`${BASE_PATH}/images/projects/${project.image}`}
+        alt=""
+        aria-hidden="true"
+        className="absolute top-0 h-full w-auto opacity-0 group-hover:opacity-100 pointer-events-none z-10"
+        style={{
+          left: "56.93%",
+          transform: `translate(${offset.x}px, calc(10% + ${offset.y}px))`,
+          transition: "opacity 0.3s ease-out, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)"
+        }}
+      />
+      <div className="flex gap-[122px] group-hover:gap-[80px] h-[168px] items-center shrink-0 transition-[gap] duration-300 ease-out">
+        <p className={`${styles.projectDescription} text-[16px] text-black group-hover:text-[#757575] w-[300px] leading-normal transition-colors duration-300 ease-out`}>{project.description}</p>
+        <span className={`${styles.projectShortName} text-[64px] text-black group-hover:text-[#757575] transition-colors duration-300 ease-out`}>{project.shortName}</span>
+      </div>
+      <div className="flex gap-[10px] items-center">
+        {project.tags.map((tag) => (
+          <TagLg key={tag} label={tag} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ExperiencesSection() {
   return (
     <section id="experiences" className="w-full bg-[#fafafa] flex flex-col items-center pt-[40px] md:pt-[64px] xl:pt-[88px] pb-[40px] md:pb-[80px] xl:pb-[128px]">
@@ -56,49 +188,14 @@ export default function ExperiencesSection() {
         {/* Featured projects — Tablet (700–1312px): description | shortName + tags wrapping */}
         <div className="hidden md:flex xl:hidden flex-col w-full px-[32px]">
           {featuredProjects.map((project) => (
-            <div key={project.shortName} className="group relative flex gap-[32px] py-[8px] items-center border-b border-solid border-[#e0e0e0] overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${BASE_PATH}/images/projects/${project.image}`}
-                alt=""
-                aria-hidden="true"
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-[197px] h-[106px] object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out pointer-events-none z-10"
-              />
-              <div className="flex gap-[56px] group-hover:gap-[70px] h-[128px] items-center pr-[24px] shrink-0 transition-[gap] duration-300 ease-out">
-                <p className={`${styles.projectDescription} text-[12px] text-black group-hover:text-[#757575] w-[200px] leading-normal transition-colors duration-300 ease-out`}>{project.description}</p>
-                <span className={`${styles.projectShortName} text-[40px] text-black group-hover:text-[#757575] transition-colors duration-300 ease-out`}>{project.shortName}</span>
-              </div>
-              <div className="flex-1 flex flex-wrap gap-[10px] items-center justify-end">
-                {project.tags.map((tag) => (
-                  <TagSm key={tag} label={tag} />
-                ))}
-              </div>
-            </div>
+            <TabletProjectRow key={project.shortName} project={project} />
           ))}
         </div>
 
         {/* Featured projects — Desktop/Laptop (1312px+): description | shortName + tags in a row */}
         <div className="hidden xl:flex flex-col w-full px-[80px] 2xl:px-0">
           {featuredProjects.map((project) => (
-            <div key={project.shortName} className="group relative flex items-center justify-between py-[24px] border-b border-solid border-[#e0e0e0] overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${BASE_PATH}/images/projects/${project.image}`}
-                alt=""
-                aria-hidden="true"
-                className="absolute top-0 h-full w-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out pointer-events-none z-10"
-                style={{ left: "56.93%" }}
-              />
-              <div className="flex gap-[122px] group-hover:gap-[80px] h-[168px] items-center shrink-0 transition-[gap] duration-300 ease-out">
-                <p className={`${styles.projectDescription} text-[16px] text-black group-hover:text-[#757575] w-[300px] leading-normal transition-colors duration-300 ease-out`}>{project.description}</p>
-                <span className={`${styles.projectShortName} text-[64px] text-black group-hover:text-[#757575] transition-colors duration-300 ease-out`}>{project.shortName}</span>
-              </div>
-              <div className="flex gap-[10px] items-center">
-                {project.tags.map((tag) => (
-                  <TagLg key={tag} label={tag} />
-                ))}
-              </div>
-            </div>
+            <DesktopProjectRow key={project.shortName} project={project} />
           ))}
         </div>
 

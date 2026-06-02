@@ -1,7 +1,7 @@
 @reference "../globals.css";
 
 .navWrapper {
-  @apply fixed z-20 flex flex-col gap-[8px] left-[16px] right-[16px] top-[16px] md:left-1/2 md:right-auto md:-translate-x-1/2 md:top-[40px] md:w-[420px];
+  @apply fixed z-50 flex flex-col gap-[8px] left-[16px] right-[16px] top-[16px] md:left-1/2 md:right-auto md:-translate-x-1/2 md:top-[40px] md:w-[420px];
 }
 
 .navBar {
@@ -33,7 +33,20 @@
 }
 
 .navPopup {
-  @apply flex flex-col items-center p-[24px] rounded-[12px] w-full backdrop-blur-[20px];
+  @apply absolute left-0 right-0 flex flex-col items-center p-[24px] rounded-[12px] backdrop-blur-[20px];
+  top: 56px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.3s;
+  pointer-events: none;
+}
+
+.popupOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .navLinkList {
@@ -45,7 +58,7 @@
   font-size: 24px;
   line-height: 1.6;
   white-space: nowrap;
-  @apply flex flex-col justify-center relative w-full text-left text-white hover:opacity-70 transition-opacity p-0 h-[38px];
+  @apply flex flex-col justify-center relative w-full text-left text-white hover:opacity-70 transition-opacity p-0 h-[38px] cursor-pointer;
 }
 
 .heroSection {

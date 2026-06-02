@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import styles from "../../styles/sections/AboutSection.module.css";
 import { BASE_PATH } from "../../lib/asset";
 
@@ -12,6 +15,26 @@ const tagWords = [
 ];
 
 export default function AboutSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section
       id="about"
@@ -48,6 +71,7 @@ export default function AboutSection() {
             Tablet:  left-1/2, -translateX-1/2, top-143, 365×311
             Laptop:  left-124, top-143, 555.5×473.5, no translate */}
         <div
+          ref={containerRef}
           className="absolute
             left-0 top-[57px] w-[197px] h-[168px]
             md:left-1/2 md:-translate-x-1/2 md:top-[143px] md:w-[365px] md:h-[311px]
@@ -57,7 +81,9 @@ export default function AboutSection() {
           <img
             src={imgAI}
             alt="AI"
-            className="absolute inset-0 max-w-none object-cover size-full pointer-events-none"
+            className={`absolute inset-0 max-w-none object-cover size-full pointer-events-none ${styles.aboutImg} ${
+              isIntersecting ? styles.visible : ""
+            }`}
           />
         </div>
 

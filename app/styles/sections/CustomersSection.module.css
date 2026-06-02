@@ -67,3 +67,71 @@
   color: #757575;
   @apply text-[12px] md:text-[16px];
 }
+
+/* Logo Marquee Styles */
+.marqueeContainer {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.marqueeContainer::before,
+.marqueeContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeContainer::before {
+  left: 0;
+  background: linear-gradient(to right, #f5f5f5 0%, rgba(245, 245, 245, 0) 100%);
+}
+
+.marqueeContainer::after {
+  right: 0;
+  background: linear-gradient(to left, #f5f5f5 0%, rgba(245, 245, 245, 0) 100%);
+}
+
+.trackLeft {
+  display: flex;
+  width: max-content;
+  gap: 60px;
+  animation: marqueeLeft 120s linear infinite;
+  align-items: center;
+}
+
+.trackRight {
+  display: flex;
+  width: max-content;
+  gap: 60px;
+  animation: marqueeRight 120s linear infinite;
+  align-items: center;
+}
+
+.logoItem {
+  flex-shrink: 0;
+}
+
+@keyframes marqueeLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+

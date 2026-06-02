@@ -19,7 +19,7 @@
   font-family: var(--font-monda);
   font-weight: 400;
   line-height: 2;
-  @apply text-left hover:opacity-70 transition-opacity text-[16px] md:text-[20px];
+  @apply text-left hover:opacity-70 transition-opacity text-[16px] md:text-[20px] cursor-pointer;
 }
 
 .copyright {
